@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour
     {
         if(transform.position != character.transform.position)
         {
-            Vector3 nextPosition = Vector3.Lerp(transform.position, character.transform.position, maxCamSpeed);
+            Vector3 nextPosition = Vector3.Lerp(transform.position, character.transform.position, maxCamSpeed * Time.deltaTime);
             nextPosition.z = -10;
             transform.position = nextPosition;
         } 

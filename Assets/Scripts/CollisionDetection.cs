@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class CollisionDetection : MonoBehaviour
 {
     //Vector2[] vertices = new Vector
     public Vector3 velocity = new Vector3(0, 0, 0);
@@ -14,7 +14,7 @@ public class Collision : MonoBehaviour
     public float maxDownVel;
 
     private Rigidbody2D rb;
-    private Collider2D coll;
+    [SerializeField] private Collider2D coll;
     private bool onGround;
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class Collision : MonoBehaviour
         onGround = false;                       //Set onGround to false. We always want to check IF we are on the ground, and assume we aren't otherwise.
         foreach (RaycastHit2D hit in hits)      //For each index, check if there is something below character.
         {
-            if (hit.collider != null)
+            if (hit.collider != null && hit.collider.isTrigger == false)
             {
 
                 velocity.y = 0;                 //Downward velocity is 0 if touching ground.
@@ -48,7 +48,7 @@ public class Collision : MonoBehaviour
         coll.Cast(new Vector2(0, 1), hits, detectDist);    //Cast a ray of the collider above for detectDist units.                
         foreach (RaycastHit2D hit in hits)      //For each index, check if there is something above character.
         {
-            if (hit.collider != null)
+            if (hit.collider != null && hit.collider.isTrigger == false)
             {
                 if (velocity.y > 0)
                 {
@@ -57,7 +57,7 @@ public class Collision : MonoBehaviour
             }
         }
 
-
+        
         //Left & Right movement since I couldn't find the supposed "other script". .05f is a controlling factor for speed.
         velocity.x = Input.GetAxis("Horizontal") * speedFactor;
 
@@ -65,7 +65,7 @@ public class Collision : MonoBehaviour
         coll.Cast(new Vector2(-1, 0), hits, detectDist);    //Cast a ray of the collider above for detectDist units.                    
         foreach (RaycastHit2D hit in hits)      //For each index, check if there is something above character.
         {
-            if (hit.collider != null)
+            if (hit.collider != null && hit.collider.isTrigger == false)
             {
                 if (velocity.x < 0)
                 {
@@ -73,12 +73,12 @@ public class Collision : MonoBehaviour
                 }
             }
         }
-
+        
         hits = new RaycastHit2D[10];
         coll.Cast(new Vector2(1, 0), hits, detectDist);    //Cast a ray of the collider above for detectDist units.                  
         foreach (RaycastHit2D hit in hits)      //For each index, check if there is something above character.
         {
-            if (hit.collider != null)
+            if (hit.collider != null && hit.collider.isTrigger == false)
             {
                 if (velocity.x > 0)
                 {
@@ -86,7 +86,7 @@ public class Collision : MonoBehaviour
                 }
             }
         }
-
+        
         //If in the air, artifically gravitate downward.
         if (!onGround && velocity.y > maxDownVel)
         {
