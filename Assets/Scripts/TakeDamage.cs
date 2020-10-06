@@ -21,6 +21,10 @@ public class TakeDamage : MonoBehaviour
         if(collision.tag == "SplitScreen")
         {
             Debug.Log("Ouch! Don't touch the rift!");
-        } 
+        }
+        if (collision.tag == "DamagingObject")
+        {
+            Debug.Log("Ouch!");
+        }
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
 
     void Awake()
     {
-        rb = gameObject.AddComponent<Rigidbody2D>() as Rigidbody2D;
-        rb.bodyType = RigidbodyType2D.Kinematic;
+        //rb = gameObject.AddComponent<Rigidbody2D>() as Rigidbody2D;
+        //rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     void Start()

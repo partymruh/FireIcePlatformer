@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Fall : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collision2D collision)
+    public Collider2D FallBox;
+    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            FallBox.enabled = false;
         } 
     }
 }
