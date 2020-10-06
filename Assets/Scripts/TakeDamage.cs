@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TakeDamage : MonoBehaviour
 {
@@ -20,11 +21,11 @@ public class TakeDamage : MonoBehaviour
     {
         if(collision.tag == "SplitScreen")
         {
-            Debug.Log("Ouch! Don't touch the rift!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if (collision.tag == "DamagingObject")
         {
-            Debug.Log("Ouch!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
