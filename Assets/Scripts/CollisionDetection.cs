@@ -38,7 +38,10 @@ public class CollisionDetection : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.isTrigger == false)
             {
-
+                if(hit.collider.tag == "MovingPlatform")
+                {
+                    this.transform.parent = hit.collider.transform;
+                }
                 velocity.y = 0;                 //Downward velocity is 0 if touching ground.
                 onGround = true;
             }
@@ -100,6 +103,7 @@ public class CollisionDetection : MonoBehaviour
         //If space is pressed and character is on the ground, jump!
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
+            transform.parent = null;
             velocity.y += jumpVel;
             onGround = false;
         }
