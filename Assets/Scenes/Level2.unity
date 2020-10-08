@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 411061248}
   - component: {fileID: 411061247}
   - component: {fileID: 411061249}
+  - component: {fileID: 411061250}
   m_Layer: 0
   m_Name: dummy_sprite_fire
   m_TagString: Player
@@ -454,7 +455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411061241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 1, z: 0}
+  m_LocalPosition: {x: -3, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -577,6 +578,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8e1bbecf5d73e49891433f416a52b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &411061250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411061241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56d095aa9474e340babf982db06fb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.25
+  otherCharacter: {fileID: 1165362221}
 --- !u!1 &630869002
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630869002}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.024767, y: -8.14109, z: 6.5108204}
+  m_LocalPosition: {x: 30.024767, y: -8, z: 6.5108204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 389451318}
@@ -1196,7 +1211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139203055}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.024767, y: -8.14109, z: 6.5108204}
+  m_LocalPosition: {x: 10.024767, y: -8, z: 6.5108204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 389451318}
@@ -1244,6 +1259,7 @@ GameObject:
   - component: {fileID: 1165362228}
   - component: {fileID: 1165362227}
   - component: {fileID: 1165362229}
+  - component: {fileID: 1165362230}
   m_Layer: 0
   m_Name: dummy_sprite_ice
   m_TagString: Player
@@ -1309,7 +1325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165362221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 21.54, z: 0}
+  m_LocalPosition: {x: 3, y: 21.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1432,6 +1448,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8e1bbecf5d73e49891433f416a52b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1165362230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165362221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56d095aa9474e340babf982db06fb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.25
+  otherCharacter: {fileID: 411061241}
 --- !u!1001 &1437919739
 PrefabInstance:
   m_ObjectHideFlags: 0

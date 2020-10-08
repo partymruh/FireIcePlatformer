@@ -10714,7 +10714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411061241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.24, y: 1.86, z: 0}
+  m_LocalPosition: {x: -8.248, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10850,7 +10850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alpha: 0.25
-  ghostOffset: {x: 10, y: 10, z: 0}
+  otherCharacter: {fileID: 1165362221}
 --- !u!1 &413472598
 GameObject:
   m_ObjectHideFlags: 0
@@ -32181,6 +32181,7 @@ GameObject:
   - component: {fileID: 1165362228}
   - component: {fileID: 1165362227}
   - component: {fileID: 1165362229}
+  - component: {fileID: 1165362230}
   m_Layer: 0
   m_Name: dummy_sprite_ice
   m_TagString: Player
@@ -32246,7 +32247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165362221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 21.54, z: 0}
+  m_LocalPosition: {x: 2.497, y: 21.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -32369,6 +32370,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8e1bbecf5d73e49891433f416a52b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1165362230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165362221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56d095aa9474e340babf982db06fb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.25
+  otherCharacter: {fileID: 411061241}
 --- !u!1 &1169358297
 GameObject:
   m_ObjectHideFlags: 0
