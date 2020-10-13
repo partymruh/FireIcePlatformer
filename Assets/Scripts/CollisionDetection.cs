@@ -61,7 +61,7 @@ public class CollisionDetection : MonoBehaviour
         }
 
         
-        //Left & Right movement since I couldn't find the supposed "other script". .05f is a controlling factor for speed.
+        //Left & Right movement. SpeedFactor is a public variable that adjusts speed.
         velocity.x = Input.GetAxis("Horizontal") * speedFactor;
 
         hits = new RaycastHit2D[10];
@@ -103,12 +103,11 @@ public class CollisionDetection : MonoBehaviour
         //If space is pressed and character is on the ground, jump!
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            transform.parent = null;
-            velocity.y += jumpVel;
+            velocity.y = jumpVel;
             onGround = false;
         }
 
-        transform.position += velocity;
+        transform.position += velocity * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

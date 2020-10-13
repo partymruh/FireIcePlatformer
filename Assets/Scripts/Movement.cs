@@ -23,12 +23,12 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             //Press the left arrow key to move the RigidBody left
-            rb.velocity = new Vector2(-5.0f, 0.0f);
+            rb.velocity = new Vector2(-5.0f * Time.deltaTime, 0.0f);
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             //Press the right arrow key to move the RigidBody right
-            rb.velocity = new Vector2(5.0f, 0.0f);
+            rb.velocity = new Vector2(5.0f * Time.deltaTime, 0.0f);
         }
         else
         {
