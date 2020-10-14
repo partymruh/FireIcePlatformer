@@ -42,7 +42,7 @@ public class CollisionDetection : MonoBehaviour
                 if(hit.collider.tag == "MovingPlatform")
                 {
                     this.transform.parent = hit.collider.transform;
-                }
+                } 
                 if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -123,9 +123,12 @@ public class CollisionDetection : MonoBehaviour
         {
             velocity.y = jumpVel;
             onGround = false;
-            transform.parent = null;
         }
         transform.position += velocity * Time.deltaTime;
+        if (onGround == false)
+        {
+            transform.parent = null;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
