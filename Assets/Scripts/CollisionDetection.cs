@@ -123,8 +123,8 @@ public class CollisionDetection : MonoBehaviour
         {
             velocity.y = jumpVel;
             onGround = false;
+            transform.parent = null;
         }
-
         transform.position += velocity * Time.deltaTime;
     }
 

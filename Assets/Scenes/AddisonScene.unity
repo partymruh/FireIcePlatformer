@@ -2607,7 +2607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   detectDist: 0.05
-  jumpVel: 25
+  jumpVel: 20
   grav: 0.2
   speedFactor: 10
   maxDownVel: -20
@@ -3597,7 +3597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   detectDist: 0.05
-  jumpVel: 25
+  jumpVel: 20
   grav: 0.2
   speedFactor: 10
   maxDownVel: -20
