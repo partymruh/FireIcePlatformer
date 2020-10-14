@@ -7,11 +7,9 @@ using UnityEngine;
 
 public class Oscillate : MonoBehaviour
 {
-    public bool toPointA;
+    public bool toPointA, active;
     public Vector2 a, b;
     public float speed;
-
-    private bool active;
 
     // Update is called once per frame
     void Update()
