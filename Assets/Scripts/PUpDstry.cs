@@ -21,13 +21,4 @@ public class PUpDstry : MonoBehaviour
             }
         }
     }
-
-    public void DestroyObjects()
-    {
-        Destroy(this.gameObject);
-        foreach (GameObject obj in affectedTiles)
-        {
-            Destroy(obj);
-        }
-    }
 }
