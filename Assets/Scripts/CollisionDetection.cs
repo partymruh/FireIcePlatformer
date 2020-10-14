@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionDetection : MonoBehaviour
 {
@@ -38,10 +39,18 @@ public class CollisionDetection : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.isTrigger == false)
             {
-
+                if(hit.collider.tag == "MovingPlatform")
+                {
+                    this.transform.parent = hit.collider.transform;
+                }
+                if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
                 velocity.y = 0;                 //Downward velocity is 0 if touching ground.
                 onGround = true;
             }
+
         }
 
         hits = new RaycastHit2D[10];
@@ -54,16 +63,20 @@ public class CollisionDetection : MonoBehaviour
                 {
                     velocity.y = 0;                 //Upward velocity 0 if blocked above.
                 }
+                if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
             }
         }
 
         
-        //Left & Right movement since I couldn't find the supposed "other script". .05f is a controlling factor for speed.
+        //Left & Right movement. SpeedFactor is a public variable that adjusts speed.
         velocity.x = Input.GetAxis("Horizontal") * speedFactor;
 
         hits = new RaycastHit2D[10];
         coll.Cast(new Vector2(-1, 0), hits, detectDist);    //Cast a ray of the collider above for detectDist units.                    
-        foreach (RaycastHit2D hit in hits)      //For each index, check if there is something above character.
+        foreach (RaycastHit2D hit in hits)      //For each index, check if there is something left of the character.
         {
             if (hit.collider != null && hit.collider.isTrigger == false)
             {
@@ -71,12 +84,16 @@ public class CollisionDetection : MonoBehaviour
                 {
                     velocity.x = 0;                 //Upward velocity 0 if blocked above.
                 }
+                if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
             }
         }
         
         hits = new RaycastHit2D[10];
         coll.Cast(new Vector2(1, 0), hits, detectDist);    //Cast a ray of the collider above for detectDist units.                  
-        foreach (RaycastHit2D hit in hits)      //For each index, check if there is something above character.
+        foreach (RaycastHit2D hit in hits)      //For each index, check if there is something right of the character.
         {
             if (hit.collider != null && hit.collider.isTrigger == false)
             {
@@ -84,13 +101,17 @@ public class CollisionDetection : MonoBehaviour
                 {
                     velocity.x = 0;                 //Upward velocity 0 if blocked above.
                 }
+                if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
             }
         }
         
         //If in the air, artifically gravitate downward.
         if (!onGround && velocity.y > maxDownVel)
         {
-            velocity.y -= grav;
+            velocity.y -= grav * Time.deltaTime;
             if (velocity.y < maxDownVel)
             {
                 velocity.y = maxDownVel;
@@ -100,11 +121,11 @@ public class CollisionDetection : MonoBehaviour
         //If space is pressed and character is on the ground, jump!
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            velocity.y += jumpVel;
+            velocity.y = jumpVel;
             onGround = false;
+            transform.parent = null;
         }
-
-        transform.position += velocity;
+        transform.position += velocity * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

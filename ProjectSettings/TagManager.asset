@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - DamagingObject
+  - SplitScreen
+  - CheckPoint
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

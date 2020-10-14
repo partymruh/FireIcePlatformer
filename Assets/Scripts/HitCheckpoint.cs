@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class TakeDamage : MonoBehaviour
+public class HitCheckpoint : MonoBehaviour
 {
+    [SerializeField]
+    public string scenePath;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +21,9 @@ public class TakeDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "SplitScreen")
+        if (collision.tag == "Player")
         {
-            Debug.Log("Ouch! Don't touch the rift!");
-        }
-        if (collision.tag == "DamagingObject")
-        {
-            Debug.Log("Ouch!");
+            SceneManager.LoadScene(scenePath);
         }
     }
 }
