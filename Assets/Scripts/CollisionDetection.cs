@@ -111,7 +111,7 @@ public class CollisionDetection : MonoBehaviour
         //If in the air, artifically gravitate downward.
         if (!onGround && velocity.y > maxDownVel)
         {
-            velocity.y -= grav;
+            velocity.y -= grav * Time.deltaTime;
             if (velocity.y < maxDownVel)
             {
                 velocity.y = maxDownVel;
