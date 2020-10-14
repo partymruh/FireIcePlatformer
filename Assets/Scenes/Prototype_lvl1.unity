@@ -2606,8 +2606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   detectDist: 0.05
-  jumpVel: 25
-  grav: 0.2
+  jumpVel: 15
+  grav: 25
   speedFactor: 10
   maxDownVel: -20
   coll: {fileID: 0}
@@ -3588,8 +3588,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   detectDist: 0.05
-  jumpVel: 25
-  grav: 0.2
+  jumpVel: 15
+  grav: 25
   speedFactor: 10
   maxDownVel: -20
   coll: {fileID: 0}
