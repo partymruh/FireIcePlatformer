@@ -14,17 +14,25 @@ public class Oscillate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(toPointA)
+        if (active)
+            OscillateHelper();
+        
+    }
+
+    private void OscillateHelper()
+    {
+        if (toPointA)
         {
             transform.position = Vector2.MoveTowards(transform.position, a, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, a) < 5)
             {
                 toPointA = false;
             }
-        } else
+        }
+        else
         {
             transform.position = Vector2.MoveTowards(transform.position, b, speed * Time.deltaTime);
-            if(Vector2.Distance(transform.position, b) < 5)
+            if (Vector2.Distance(transform.position, b) < 5)
             {
                 toPointA = true;
             }
