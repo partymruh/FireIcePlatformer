@@ -2591,7 +2591,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411061241}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 204267ce95c9e0449b05d25f634378cd, type: 3}
   m_Name: 
@@ -2859,11 +2859,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice_Elemental
       objectReference: {fileID: 0}
-    - target: {fileID: 8215975676760715802, guid: 627aa097f7f10d14bac0c02aec90b8ce,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8215975676760715804, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: otherCharacter
@@ -2989,10 +2984,9 @@ GameObject:
   m_Component:
   - component: {fileID: 963995829}
   - component: {fileID: 963995828}
-  - component: {fileID: 963995827}
   - component: {fileID: 963995826}
-  - component: {fileID: 963995830}
   - component: {fileID: 963995831}
+  - component: {fileID: 963995827}
   m_Layer: 0
   m_Name: fire
   m_TagString: Untagged
@@ -3035,15 +3029,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 963995825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd81a0e7fa066b2418820e595297ae7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 56ae0719d2c632748856b6ae08cc5b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  becomeThisSprite: {fileID: 21300000, guid: 28442174e6fd78d4ca326f4d28521ed5, type: 3}
   affectedTiles:
-  - {fileID: 126673010}
   - {fileID: 284218952}
-  - {fileID: 51713668}
+  - {fileID: 126673010}
   - {fileID: 113592972}
   - {fileID: 224387617}
+  - {fileID: 51713668}
 --- !u!212 &963995828
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3108,19 +3103,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &963995830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963995825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd81a0e7fa066b2418820e595297ae7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  affectedTiles: []
 --- !u!95 &963995831
 Animator:
   serializedVersion: 3
