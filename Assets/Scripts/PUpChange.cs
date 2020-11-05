@@ -8,16 +8,86 @@ public class PUpChange : MonoBehaviour
     public Sprite becomeThisSprite;
 
     public List<GameObject> affectedTiles;
+
+    public float delay;
+    public GameObject particle;
+
+    public Color fireColor;
+    public Color iceColor;
+    public bool ColorStartsAsFire;
+
+    private bool active;
+    private GameObject part;
+    private float maxDelay;
+
+    private Vector3 destination;
+
+    private ParticleSystem.MainModule particleSettings;
+
+    private void Start()
+    {
+        maxDelay = delay;
+
+        foreach (GameObject tile in affectedTiles)
+        {
+            destination += tile.transform.position;
+        }
+
+        destination /= affectedTiles.Count;
+    }
+
+    private void FixedUpdate()
+    {
+        if (active)
+        {
+            if (delay > 0)
+            {
+                part.transform.position = Vector3.Lerp(transform.position, destination, (maxDelay - delay) / maxDelay);
+
+                particleSettings.startColor = Color.Lerp(fireColor, iceColor, ((ColorStartsAsFire ? 1f : 0f) * maxDelay + (-1f * (ColorStartsAsFire ? 1f : -1f)) * delay) / maxDelay);
+
+                delay--;
+            }
+
+            if (delay == 0)
+            {
+                Destroy(part);
+
+                foreach (GameObject obj in affectedTiles)
+                {
+                    obj.GetComponent<SpriteRenderer>().sprite = becomeThisSprite;
+                }
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+            active = true;
 
-            foreach (GameObject obj in affectedTiles)
+            Color c = gameObject.GetComponent<SpriteRenderer>().color;
+            c.a = 0;
+            gameObject.GetComponent<SpriteRenderer>().color = c;
+
+            if (part == null)
             {
-                obj.GetComponent<SpriteRenderer>().sprite = becomeThisSprite;
+                part = Object.Instantiate<GameObject>(particle);
+                particleSettings = part.GetComponent<ParticleSystem>().main;
+
+                if (ColorStartsAsFire)
+                {
+                    particleSettings.startColor = fireColor;
+                }
+                else
+                {
+                    particleSettings.startColor = iceColor;
+                }
             }
+
+            part.transform.position = transform.position;
+            part.SetActive(true);
         }
     }
 }

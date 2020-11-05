@@ -2991,7 +2991,6 @@ GameObject:
   - component: {fileID: 963995828}
   - component: {fileID: 963995827}
   - component: {fileID: 963995826}
-  - component: {fileID: 963995830}
   - component: {fileID: 963995831}
   m_Layer: 0
   m_Name: fire
@@ -3044,6 +3043,12 @@ MonoBehaviour:
   - {fileID: 51713668}
   - {fileID: 113592972}
   - {fileID: 224387617}
+  delay: 50
+  particle: {fileID: 1367353370584932758, guid: 23762e6d8d38a194cbeec00ed78c3fe6,
+    type: 3}
+  fireColor: {r: 0, g: 0.11006701, b: 0.6792453, a: 1}
+  iceColor: {r: 0.49056602, g: 0, b: 0, a: 1}
+  ColorStartsAsFire: 1
 --- !u!212 &963995828
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3108,19 +3113,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &963995830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963995825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd81a0e7fa066b2418820e595297ae7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  affectedTiles: []
 --- !u!95 &963995831
 Animator:
   serializedVersion: 3
@@ -3709,6 +3701,11 @@ MonoBehaviour:
   - {fileID: 1052371709}
   - {fileID: 1869731014}
   - {fileID: 968965217}
+  delay: 50
+  particle: {fileID: 0}
+  fireColor: {r: 0, g: 0.060424086, b: 0.6037736, a: 1}
+  iceColor: {r: 0.5283019, g: 0, b: 0, a: 1}
+  ColorStartsAsFire: 0
 --- !u!61 &1175548660
 BoxCollider2D:
   m_ObjectHideFlags: 0

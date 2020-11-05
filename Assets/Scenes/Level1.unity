@@ -1447,6 +1447,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedTiles: []
+  delay: 0
+  particle: {fileID: 0}
+  fireColor: {r: 0, g: 0, b: 0, a: 0}
+  iceColor: {r: 0, g: 0, b: 0, a: 0}
+  ColorStartsAsFire: 0
 --- !u!212 &963995828
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1525,6 +1530,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affectedTiles:
   - {fileID: 1897531020}
+  delay: 0
+  particle: {fileID: 0}
+  fireColor: {r: 0, g: 0, b: 0, a: 0}
+  iceColor: {r: 0, g: 0, b: 0, a: 0}
+  ColorStartsAsFire: 0
 --- !u!1 &964798105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +1989,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affectedTiles:
   - {fileID: 1741182335}
+  delay: 50
+  particle: {fileID: 1367353370584932758, guid: 23762e6d8d38a194cbeec00ed78c3fe6,
+    type: 3}
+  fireColor: {r: 0, g: 0.17842054, b: 1, a: 1}
+  iceColor: {r: 0.6037736, g: 0, b: 0.023165433, a: 1}
+  ColorStartsAsFire: 0
 --- !u!61 &1175548660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2019,6 +2035,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affectedTiles:
   - {fileID: 963995825}
+  delay: 50
+  particle: {fileID: 1367353370584932758, guid: 23762e6d8d38a194cbeec00ed78c3fe6,
+    type: 3}
+  fireColor: {r: 0, g: 0.142382, b: 0.9056604, a: 1}
+  iceColor: {r: 0.4811321, g: 0, b: 0, a: 1}
+  ColorStartsAsFire: 0
 --- !u!1 &1428828911
 GameObject:
   m_ObjectHideFlags: 0
