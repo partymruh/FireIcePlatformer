@@ -52,7 +52,6 @@ public class PUpChange : MonoBehaviour
             if (delay == 0)
             {
                 Destroy(part);
-
                 foreach (GameObject obj in affectedTiles)
                 {
                     obj.GetComponent<SpriteRenderer>().sprite = becomeThisSprite;

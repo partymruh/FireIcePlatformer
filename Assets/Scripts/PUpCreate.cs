@@ -49,8 +49,6 @@ public class PUpCreate : MonoBehaviour
             if (delay == 0)
             {
                 Destroy(part);
-                Destroy(this.gameObject);
-
                 foreach (GameObject obj in affectedTiles)
                 {
                     obj.SetActive(true);
