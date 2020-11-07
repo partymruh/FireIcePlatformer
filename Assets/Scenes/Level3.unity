@@ -2707,7 +2707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  detectDist: 0.05
+  detectDist: 0.2
   jumpVel: 15
   grav: 25
   speedFactor: 10
@@ -2737,7 +2737,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!50 &411061247
 Rigidbody2D:
@@ -2956,6 +2956,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice_Elemental
       objectReference: {fileID: 0}
+    - target: {fileID: 8215975676760715800, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215975676760715800, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8215975676760715802, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: m_Enabled
@@ -2966,6 +2976,21 @@ PrefabInstance:
       propertyPath: otherCharacter
       value: 
       objectReference: {fileID: 411061241}
+    - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627aa097f7f10d14bac0c02aec90b8ce, type: 3}
 --- !u!1 &755926461

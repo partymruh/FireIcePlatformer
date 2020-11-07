@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class CollisionDetection : MonoBehaviour
 {
@@ -47,10 +48,12 @@ public class CollisionDetection : MonoBehaviour
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
-                velocity.y = 0;                 //Downward velocity is 0 if touching ground.
-                onGround = true;
+                if (velocity.y <= 0)
+                {
+                    velocity.y = 0;                 //Downward velocity is 0 if touching ground.
+                    onGround = true;
+                }
             }
-
         }
 
         hits = new RaycastHit2D[10];
@@ -59,7 +62,7 @@ public class CollisionDetection : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.isTrigger == false)
             {
-                if (velocity.y > 0)
+                if (velocity.y >= 0)
                 {
                     velocity.y = 0;                 //Upward velocity 0 if blocked above.
                 }
@@ -69,8 +72,7 @@ public class CollisionDetection : MonoBehaviour
                 }
             }
         }
-
-        
+    
         //Left & Right movement. SpeedFactor is a public variable that adjusts speed.
         velocity.x = Input.GetAxis("Horizontal") * speedFactor;
 
@@ -82,7 +84,7 @@ public class CollisionDetection : MonoBehaviour
             {
                 if (velocity.x < 0)
                 {
-                    velocity.x = 0;                 //Upward velocity 0 if blocked above.
+                    velocity.x = 0;                 //Left velocity 0 if blocked left.
                 }
                 if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
                 {
@@ -99,7 +101,7 @@ public class CollisionDetection : MonoBehaviour
             {
                 if (velocity.x > 0)
                 {
-                    velocity.x = 0;                 //Upward velocity 0 if blocked above.
+                    velocity.x = 0;                 //Right velocity 0 if blocked right.
                 }
                 if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
                 {
