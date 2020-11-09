@@ -1306,7 +1306,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &411061250
 MonoBehaviour:
@@ -1446,7 +1446,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963995829}
   - component: {fileID: 963995828}
-  - component: {fileID: 963995827}
   - component: {fileID: 963995826}
   - component: {fileID: 963995830}
   m_Layer: 0
@@ -1482,24 +1481,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &963995827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963995825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd81a0e7fa066b2418820e595297ae7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  affectedTiles: []
-  delay: 0
-  particle: {fileID: 0}
-  fireColor: {r: 0, g: 0, b: 0, a: 0}
-  iceColor: {r: 0, g: 0, b: 0, a: 0}
-  ColorStartsAsFire: 0
 --- !u!212 &963995828
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1578,10 +1559,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affectedTiles:
   - {fileID: 1897531020}
-  delay: 0
-  particle: {fileID: 0}
-  fireColor: {r: 0, g: 0, b: 0, a: 0}
-  iceColor: {r: 0, g: 0, b: 0, a: 0}
+  delay: 50
+  particle: {fileID: 1367353370584932758, guid: 23762e6d8d38a194cbeec00ed78c3fe6,
+    type: 3}
+  fireColor: {r: 0, g: 0, b: 0.64705884, a: 1}
+  iceColor: {r: 0, g: 0, b: 0.50980395, a: 1}
   ColorStartsAsFire: 0
 --- !u!1 &964798105
 GameObject:
@@ -2460,7 +2442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1897531021
 Transform:
   m_ObjectHideFlags: 0
@@ -2834,12 +2816,12 @@ PrefabInstance:
     - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627aa097f7f10d14bac0c02aec90b8ce, type: 3}

@@ -2784,7 +2784,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &411061250
 MonoBehaviour:
@@ -2984,12 +2984,12 @@ PrefabInstance:
     - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627aa097f7f10d14bac0c02aec90b8ce, type: 3}
@@ -4974,6 +4974,11 @@ PrefabInstance:
         type: 3}
       propertyPath: b.x
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202548232238620677, guid: 196595e59e7bf594cbd8d7034f3e9578,
+        type: 3}
+      propertyPath: active
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 196595e59e7bf594cbd8d7034f3e9578, type: 3}

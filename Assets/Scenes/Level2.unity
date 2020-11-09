@@ -1551,7 +1551,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &411061250
 MonoBehaviour:
@@ -1725,7 +1725,8 @@ MonoBehaviour:
   affectedTiles:
   - {fileID: 1930270802}
   delay: 50
-  particle: {fileID: 0}
+  particle: {fileID: 1367353370584932758, guid: 23762e6d8d38a194cbeec00ed78c3fe6,
+    type: 3}
   fireColor: {r: 0.022116425, g: 0.11608159, b: 0.6698113, a: 1}
   iceColor: {r: 0.5283019, g: 0, b: 0, a: 1}
   ColorStartsAsFire: 0
@@ -2971,12 +2972,12 @@ PrefabInstance:
     - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8215975676760715806, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627aa097f7f10d14bac0c02aec90b8ce, type: 3}
