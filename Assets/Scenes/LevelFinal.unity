@@ -3929,6 +3929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1953914484683689364, guid: d41be2ef6f6cc7249b3cb2281feeb9e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1953914484683689368, guid: d41be2ef6f6cc7249b3cb2281feeb9e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4162,6 +4167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseScreen (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327364700032825348, guid: f84a2bd08770ae24181c9a19c444a03d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5327364700032825351, guid: f84a2bd08770ae24181c9a19c444a03d,
         type: 3}
