@@ -15,6 +15,9 @@ public class CollisionDetection : MonoBehaviour
     public float speedFactor;
     public float maxDownVel;
 
+    public GameObject PauseMenu;
+    public GameObject OtherMenu;
+
     private Rigidbody2D rb;
     [SerializeField] private Collider2D coll;
     private bool onGround;
@@ -32,6 +35,14 @@ public class CollisionDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (PauseMenu != null && OtherMenu != null && Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu.SetActive(true);
+            OtherMenu.SetActive(true);
+            Time.timeScale = 0;
+        }    
+
         //Set up array
         RaycastHit2D[] hits = new RaycastHit2D[10];
         coll.Cast(new Vector2(0, -1), hits, detectDist);    //Cast a ray of the collider toward the ground for detectDist units.
