@@ -16,7 +16,7 @@ public class ButtonHover : MonoBehaviour
         baseScale = transform.localScale.x;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (mouseOver && transform.localScale.x < baseScale * propScale)
         {

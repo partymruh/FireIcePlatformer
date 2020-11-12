@@ -9,6 +9,7 @@ public class StartBtn : MonoBehaviour
 
     private void OnMouseUp()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(goToScene.name);
     }
 }

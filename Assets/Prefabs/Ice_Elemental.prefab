@@ -118,6 +118,10 @@ MonoBehaviour:
   grav: 25
   speedFactor: 10
   maxDownVel: -20
+  PauseMenu: {fileID: 1953914484683689364, guid: d41be2ef6f6cc7249b3cb2281feeb9e2,
+    type: 3}
+  OtherMenu: {fileID: 5327364700032825348, guid: f84a2bd08770ae24181c9a19c444a03d,
+    type: 3}
   coll: {fileID: 0}
 --- !u!61 &8215975676760715800
 BoxCollider2D:
