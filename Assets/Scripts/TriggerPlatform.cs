@@ -6,11 +6,9 @@ public class TriggerPlatform : MonoBehaviour
 {
     public GameObject platform;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnDestroy()
     {
-        if(other.tag == "Player")
-        {
+        if(platform)
             platform.GetComponent<Oscillate>().SetActive(true);
-        }
     }
 }
