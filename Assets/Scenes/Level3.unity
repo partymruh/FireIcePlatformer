@@ -3094,15 +3094,20 @@ PrefabInstance:
       propertyPath: scenePath
       value: Assets/Scenes/Level4.unity
       objectReference: {fileID: 0}
+    - target: {fileID: 34774890897784068, guid: 21af588af4bb198429663d598a710a96,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 34774890897784069, guid: 21af588af4bb198429663d598a710a96,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.64
+      value: 10.58
       objectReference: {fileID: 0}
     - target: {fileID: 34774890897784069, guid: 21af588af4bb198429663d598a710a96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.02
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 34774890897784069, guid: 21af588af4bb198429663d598a710a96,
         type: 3}
@@ -3148,6 +3153,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34774890897784069, guid: 21af588af4bb198429663d598a710a96,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 34774890897784069, guid: 21af588af4bb198429663d598a710a96,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 34774890897784071, guid: 21af588af4bb198429663d598a710a96,
         type: 3}
