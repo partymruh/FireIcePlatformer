@@ -151,10 +151,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfScenesInOrder:
+  - {fileID: 102900000, guid: 744577ff46eb5e8489b3b9cce4b12da7, type: 3}
   - {fileID: 102900000, guid: b4064fd606ffe0048aac52dfad29c249, type: 3}
-  - {fileID: 102900000, guid: efdc8195c3e65bf46ae9bc79ef2bedea, type: 3}
+  - {fileID: 102900000, guid: 87fa85897c6de124abb15aafcb183bb3, type: 3}
   - {fileID: 102900000, guid: 8fd312e3efb41954683e8b483102c164, type: 3}
-  - {fileID: 102900000, guid: 8ccd8a8bed1c41a4983e6ada6790b61f, type: 3}
+  - {fileID: 102900000, guid: 0e05c0c94dfc4f244afd2f3798a3ee1f, type: 3}
   - {fileID: 102900000, guid: 71037f0521f4b04408ff357878db1937, type: 3}
   - {fileID: 102900000, guid: bac5af612989dc848893647179e18f83, type: 3}
   baseLevelObj: {fileID: 1929441574}
@@ -400,7 +401,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1202906715
@@ -1019,6 +1020,6 @@ SpriteRenderer:
   m_Size: {x: 3, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
