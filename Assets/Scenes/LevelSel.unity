@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 102900000, guid: 0e05c0c94dfc4f244afd2f3798a3ee1f, type: 3}
   - {fileID: 102900000, guid: 71037f0521f4b04408ff357878db1937, type: 3}
   - {fileID: 102900000, guid: bac5af612989dc848893647179e18f83, type: 3}
+  - {fileID: 102900000, guid: 0a7769f6b4232ac4db4e370b9fc2d66f, type: 3}
   baseLevelObj: {fileID: 1929441574}
   numLevelsInARow: 3
   spaceBetweenXAxis: 6
