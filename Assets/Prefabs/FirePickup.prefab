@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9196148560880875178}
   - component: {fileID: 9196148560880875182}
   - component: {fileID: 803226621089874992}
+  - component: {fileID: 1265199509243234824}
   m_Layer: 0
   m_Name: FirePickup
   m_TagString: Untagged
@@ -148,3 +149,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioEnvironment: {fileID: 0}
   collectClip: {fileID: 8300000, guid: 4674a126adf643247a6aefd05534a035, type: 3}
+--- !u!95 &1265199509243234824
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196148560880875177}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04bc0f91407226e4ea7e69c119bc4564, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
