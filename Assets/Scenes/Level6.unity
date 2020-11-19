@@ -3122,6 +3122,12 @@ PrefabInstance:
       objectReference: {fileID: 370761294}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d41be2ef6f6cc7249b3cb2281feeb9e2, type: 3}
+--- !u!1 &857367571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1953914484683689364, guid: d41be2ef6f6cc7249b3cb2281feeb9e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 857367570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &891314695
 GameObject:
   m_ObjectHideFlags: 0
@@ -6867,6 +6873,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice_Elemental
       objectReference: {fileID: 0}
+    - target: {fileID: 8215975676760715803, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 857367571}
+    - target: {fileID: 8215975676760715803, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: OtherMenu
+      value: 
+      objectReference: {fileID: 370761294}
     - target: {fileID: 8215975676760715804, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: otherCharacter

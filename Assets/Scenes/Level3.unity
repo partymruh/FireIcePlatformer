@@ -1987,7 +1987,7 @@ PrefabInstance:
     - target: {fileID: 4232688053548358926, guid: 4e5354b99c457c34c82ff1978aaef0f3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4232688053548358926, guid: 4e5354b99c457c34c82ff1978aaef0f3,
         type: 3}
@@ -3192,6 +3192,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice_Elemental
       objectReference: {fileID: 0}
+    - target: {fileID: 8215975676760715803, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 1463623661}
+    - target: {fileID: 8215975676760715803, guid: 627aa097f7f10d14bac0c02aec90b8ce,
+        type: 3}
+      propertyPath: OtherMenu
+      value: 
+      objectReference: {fileID: 452635861}
     - target: {fileID: 8215975676760715804, guid: 627aa097f7f10d14bac0c02aec90b8ce,
         type: 3}
       propertyPath: otherCharacter
@@ -3632,7 +3642,7 @@ PrefabInstance:
     - target: {fileID: 34774890897784069, guid: 5988a96513e0fd24cb900501c2b6fa4c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 34774890897784069, guid: 5988a96513e0fd24cb900501c2b6fa4c,
         type: 3}
@@ -4514,7 +4524,7 @@ PrefabInstance:
     - target: {fileID: 2376762467003773871, guid: 3bfed2ec8d18bc94282643e417394842,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2376762467003773871, guid: 3bfed2ec8d18bc94282643e417394842,
         type: 3}
@@ -4625,6 +4635,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1463623661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1953914484683689364, guid: d41be2ef6f6cc7249b3cb2281feeb9e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 210942516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1635707099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5225,7 +5241,7 @@ PrefabInstance:
     - target: {fileID: 4232688053548358926, guid: 4e5354b99c457c34c82ff1978aaef0f3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4232688053548358926, guid: 4e5354b99c457c34c82ff1978aaef0f3,
         type: 3}
@@ -5350,7 +5366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1897531020
 GameObject:
@@ -5610,7 +5626,7 @@ PrefabInstance:
     - target: {fileID: 9196148560880875181, guid: e617d1b0e259efb44a42c907d7e8e91d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9196148560880875181, guid: e617d1b0e259efb44a42c907d7e8e91d,
         type: 3}

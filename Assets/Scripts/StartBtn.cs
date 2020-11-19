@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class StartBtn : MonoBehaviour
 {
-    public Object goToScene;
+    [SerializeField]
+    public string scenePath;
 
     private void OnMouseUp()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(goToScene.name);
+        SceneManager.LoadScene(scenePath);  
     }
 }

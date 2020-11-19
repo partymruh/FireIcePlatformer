@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class LevelSelect : MonoBehaviour
 {
-    public List<Object> listOfScenesInOrder;
+    [SerializeField]
+    public List<string> listOfScenesInOrder;
+
     public GameObject baseLevelObj;
     public int numLevelsInARow;
     public float spaceBetweenXAxis;
@@ -15,12 +17,12 @@ public class LevelSelect : MonoBehaviour
     {
         int lev = 1;
 
-        foreach (Object level in listOfScenesInOrder)
+        foreach (string level in listOfScenesInOrder)
         {
             GameObject newObj = Object.Instantiate<GameObject>(baseLevelObj);
             newObj.transform.GetChild(0).GetComponent<TextMesh>().text = lev.ToString();
             newObj.transform.position = new Vector3(((lev-1) % numLevelsInARow) * spaceBetweenXAxis - 6, -((lev-1) / numLevelsInARow) * spaceBetweenYAxis);
-            newObj.GetComponent<ChangeLevel>().sceneName = level.name;
+            newObj.GetComponent<ChangeLevel>().sceneName = level;
             newObj.SetActive(true);
             lev++;
         }
