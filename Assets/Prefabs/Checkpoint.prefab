@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenePath: 
+  levelWinText: {fileID: 487725355997738304, guid: 89e926f885f69434a998312bcf5bfd57,
+    type: 3}
 --- !u!95 &-7272509609314549423
 Animator:
   serializedVersion: 3

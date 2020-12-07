@@ -17,6 +17,7 @@ public class CollisionDetection : MonoBehaviour
 
     public GameObject PauseMenu;
     public GameObject OtherMenu;
+    public GameObject DeathX;
 
     private Rigidbody2D rb;
     [SerializeField] private Collider2D coll;
@@ -35,13 +36,14 @@ public class CollisionDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(SceneManager.GetActiveScene().path);
 
         if (PauseMenu != null && OtherMenu != null && Input.GetKeyDown(KeyCode.Escape))
         {
             PauseMenu.SetActive(true);
             OtherMenu.SetActive(true);
             Time.timeScale = 0;
-        }    
+        }
 
         //Set up array
         RaycastHit2D[] hits = new RaycastHit2D[10];
@@ -51,13 +53,13 @@ public class CollisionDetection : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.isTrigger == false)
             {
-                if(hit.collider.tag == "MovingPlatform")
+                if (hit.collider.tag == "MovingPlatform")
                 {
                     this.transform.parent = hit.collider.transform;
-                } 
+                }
                 if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    Reload();
                 }
                 if (velocity.y <= 0)
                 {
@@ -79,11 +81,11 @@ public class CollisionDetection : MonoBehaviour
                 }
                 if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    Reload();
                 }
             }
         }
-    
+
         //Left & Right movement. SpeedFactor is a public variable that adjusts speed.
         velocity.x = Input.GetAxis("Horizontal") * speedFactor;
 
@@ -99,11 +101,11 @@ public class CollisionDetection : MonoBehaviour
                 }
                 if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    Reload();
                 }
             }
         }
-        
+
         hits = new RaycastHit2D[10];
         coll.Cast(new Vector2(1, 0), hits, detectDist);    //Cast a ray of the collider above for detectDist units.                  
         foreach (RaycastHit2D hit in hits)      //For each index, check if there is something right of the character.
@@ -116,11 +118,11 @@ public class CollisionDetection : MonoBehaviour
                 }
                 if (hit.collider.tag == "SplitScreen" || hit.collider.tag == "DamagingObject")
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    Reload();
                 }
             }
         }
-        
+
         //If in the air, artifically gravitate downward.
         if (!onGround && velocity.y > maxDownVel)
         {
@@ -146,5 +148,14 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+    }
+
+    private void Reload()
+    {
+        Vector3 pos = transform.position;
+        GameObject d = Instantiate(DeathX);
+        d.transform.position = pos;
+        DontDestroyOnLoad(d);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

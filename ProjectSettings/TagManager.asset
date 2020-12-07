@@ -8,6 +8,7 @@ TagManager:
   - SplitScreen
   - CheckPoint
   - MovingPlatform
+  - DeathX
   layers:
   - Default
   - TransparentFX

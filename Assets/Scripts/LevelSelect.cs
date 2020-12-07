@@ -8,6 +8,8 @@ public class LevelSelect : MonoBehaviour
     public List<string> listOfScenesInOrder;
 
     public GameObject baseLevelObj;
+    public GameObject checkmark;
+
     public int numLevelsInARow;
     public float spaceBetweenXAxis;
     public float spaceBetweenYAxis;
@@ -20,10 +22,19 @@ public class LevelSelect : MonoBehaviour
         foreach (string level in listOfScenesInOrder)
         {
             GameObject newObj = Object.Instantiate<GameObject>(baseLevelObj);
+            
             newObj.transform.GetChild(0).GetComponent<TextMesh>().text = lev.ToString();
             newObj.transform.position = new Vector3(((lev-1) % numLevelsInARow) * spaceBetweenXAxis - 6, -((lev-1) / numLevelsInARow) * spaceBetweenYAxis);
             newObj.GetComponent<ChangeLevel>().sceneName = level;
             newObj.SetActive(true);
+
+            if (GameObject.Find("GameManager").GetComponent<LevelWinTracker>().beatenLevels.Contains(level))
+            {
+                newObj = Object.Instantiate<GameObject>(checkmark);
+                newObj.transform.position = new Vector3(((lev - 1) % numLevelsInARow) * spaceBetweenXAxis - 6, -((lev - 1) / numLevelsInARow) * spaceBetweenYAxis);
+                newObj.SetActive(true);
+            }
+
             lev++;
         }
     }

@@ -121,6 +121,7 @@ MonoBehaviour:
   maxDownVel: -20
   PauseMenu: {fileID: 0}
   OtherMenu: {fileID: 0}
+  DeathX: {fileID: 7981385005107879901, guid: 9eb859535d5704a4d9621445f409b0e8, type: 3}
   coll: {fileID: 0}
 --- !u!61 &2376762467003773866
 BoxCollider2D:

@@ -123,6 +123,7 @@ MonoBehaviour:
     type: 3}
   OtherMenu: {fileID: 5327364700032825348, guid: f84a2bd08770ae24181c9a19c444a03d,
     type: 3}
+  DeathX: {fileID: 7981385005107879901, guid: 9eb859535d5704a4d9621445f409b0e8, type: 3}
   coll: {fileID: 0}
 --- !u!61 &8215975676760715800
 BoxCollider2D:
