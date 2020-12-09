@@ -9,6 +9,7 @@ public class LevelSelect : MonoBehaviour
 
     public GameObject baseLevelObj;
     public GameObject checkmark;
+    public GameObject padlock;
 
     public int numLevelsInARow;
     public float spaceBetweenXAxis;
@@ -18,6 +19,7 @@ public class LevelSelect : MonoBehaviour
     void Start()
     {
         int lev = 1;
+        bool levelUnlocked = true;
 
         foreach (string level in listOfScenesInOrder)
         {
@@ -28,11 +30,23 @@ public class LevelSelect : MonoBehaviour
             newObj.GetComponent<ChangeLevel>().sceneName = level;
             newObj.SetActive(true);
 
+            if(levelUnlocked == false)
+            {
+                newObj.GetComponent<ChangeLevel>().canChangeLevel = false;
+                GameObject padlockOverlay = Object.Instantiate<GameObject>(padlock);
+                padlockOverlay.transform.position = new Vector3(((lev - 1) % numLevelsInARow) * spaceBetweenXAxis - 6, -((lev - 1) / numLevelsInARow) * spaceBetweenYAxis);
+                padlockOverlay.SetActive(true);
+            }
+
             if (GameObject.Find("GameManager").GetComponent<LevelWinTracker>().beatenLevels.Contains(level))
             {
                 newObj = Object.Instantiate<GameObject>(checkmark);
                 newObj.transform.position = new Vector3(((lev - 1) % numLevelsInARow) * spaceBetweenXAxis - 6, -((lev - 1) / numLevelsInARow) * spaceBetweenYAxis);
                 newObj.SetActive(true);
+                levelUnlocked = true;
+            } else
+            {
+                levelUnlocked = false;
             }
 
             lev++;

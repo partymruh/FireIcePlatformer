@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class ChangeLevel : MonoBehaviour
 {
     public string sceneName;
+    public bool canChangeLevel = true;
 
     private void OnMouseUp()
     {
-        SceneManager.LoadScene(sceneName);
+        if(canChangeLevel)
+            SceneManager.LoadScene(sceneName);
     }
 }
