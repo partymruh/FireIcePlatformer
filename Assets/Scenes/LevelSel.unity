@@ -155,15 +155,19 @@ MonoBehaviour:
   - Assets/Scenes/Level1.unity
   - Assets/Scenes/Level2.unity
   - Assets/Scenes/Level3.unity
-  - Assets/Scenes/Level4.unity
-  - Assets/Scenes/Level5.unity
+  - Assets/Scenes/Level4.00.unity
+  - Assets/Scenes/Level4.33.unity
+  - Assets/Scenes/Level4.66.unity
+  - Assets/Scenes/Level5.00.unity
+  - Assets/Scenes/Level5.33.unity
+  - Assets/Scenes/Level5.66.unity
   - Assets/Scenes/Level6.unity
   - Assets/Scenes/Level7.unity
   baseLevelObj: {fileID: 1929441574}
   checkmark: {fileID: 121297308}
   padlock: {fileID: 938474497}
-  numLevelsInARow: 3
-  spaceBetweenXAxis: 6
+  numLevelsInARow: 4
+  spaceBetweenXAxis: 4
   spaceBetweenYAxis: 1.5
 --- !u!4 &77974213
 Transform:
@@ -1220,7 +1224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601772926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -3, z: 0}
+  m_LocalPosition: {x: 6, y: -4.5, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 402398248}
