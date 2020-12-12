@@ -18,6 +18,7 @@ public class CollisionDetection : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject OtherMenu;
     public GameObject DeathX;
+    private Animator animator;
 
     private Rigidbody2D rb;
     [SerializeField] private Collider2D coll;
@@ -27,6 +28,7 @@ public class CollisionDetection : MonoBehaviour
     void Start()
     {
         //Get the Character's Rigidbody
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         Collider2D[] res = new Collider2D[1];   //Set up an array
         rb.GetAttachedColliders(res);           //Get the Rigidbody's collider
@@ -63,8 +65,10 @@ public class CollisionDetection : MonoBehaviour
                 }
                 if (velocity.y <= 0)
                 {
-                    velocity.y = 0;                 //Downward velocity is 0 if touching ground.
+                    velocity.y = 0; //Downward velocity is 0 if touching ground.
                     onGround = true;
+                    animator.ResetTrigger("Jumped");
+                    animator.SetTrigger("Landed");
                 }
             }
         }
@@ -138,6 +142,8 @@ public class CollisionDetection : MonoBehaviour
         {
             velocity.y = jumpVel;
             onGround = false;
+            animator.ResetTrigger("Landed");
+            animator.SetTrigger("Jumped");
         }
         transform.position += velocity * Time.deltaTime;
         if (onGround == false)
