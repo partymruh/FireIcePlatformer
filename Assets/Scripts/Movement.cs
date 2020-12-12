@@ -19,7 +19,13 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        
+        int animationFlipMultiplier = 1;
+        if (transform.localScale.x < 0)
+        {
+            animationFlipMultiplier = -1;
+        }
+        transform.localScale = new Vector3(animationFlipMultiplier * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             //Press the left arrow key to move the RigidBody left
