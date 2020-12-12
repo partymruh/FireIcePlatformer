@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    private float scale;
 
     void Awake()
     {
@@ -14,17 +15,17 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        
+        scale = transform.localScale.x;
     }
 
     void Update()
     {
-        int animationFlipMultiplier = 1;
-        if (transform.localScale.x < 0)
+        int animationFlipMultiplier = -1;
+        if (((Vector2)GetComponent<Rigidbody2D>().velocity).x < 0)
         {
-            animationFlipMultiplier = -1;
+            animationFlipMultiplier = 1;
         }
-        transform.localScale = new Vector3(animationFlipMultiplier * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        transform.localScale = new Vector3(animationFlipMultiplier * scale, transform.localScale.y, transform.localScale.z);
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
