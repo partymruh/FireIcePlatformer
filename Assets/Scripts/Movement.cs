@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
         scale = transform.localScale.x;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         int animationFlipMultiplier = -1;
         if (((Vector2)GetComponent<Rigidbody2D>().velocity).x < 0)
@@ -26,7 +26,10 @@ public class Movement : MonoBehaviour
             animationFlipMultiplier = 1;
         }
         transform.localScale = new Vector3(animationFlipMultiplier * scale, transform.localScale.y, transform.localScale.z);
+    }
 
+    void Update()
+    {
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             //Press the left arrow key to move the RigidBody left
