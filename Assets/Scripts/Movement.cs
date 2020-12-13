@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
         {
             //Press the left arrow key to move the RigidBody left
             rb.velocity = new Vector2(-5.0f * Time.deltaTime, 0.0f);
+
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
