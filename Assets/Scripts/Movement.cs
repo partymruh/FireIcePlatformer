@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
     private float scale;
 
     void Awake()
@@ -16,6 +17,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         scale = transform.localScale.x;
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -34,17 +36,19 @@ public class Movement : MonoBehaviour
         {
             //Press the left arrow key to move the RigidBody left
             rb.velocity = new Vector2(-5.0f * Time.deltaTime, 0.0f);
-
+            animator.SetBool("Moving", true);
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             //Press the right arrow key to move the RigidBody right
             rb.velocity = new Vector2(5.0f * Time.deltaTime, 0.0f);
+            animator.SetBool("Moving", true);
         }
         else
         {
             //Make the character(s) stop
             rb.velocity = new Vector2(0.0f, 0.0f);
+            animator.SetBool("Moving", false);
         }
     }
 }
