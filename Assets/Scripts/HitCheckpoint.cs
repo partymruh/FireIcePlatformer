@@ -10,7 +10,7 @@ public class HitCheckpoint : MonoBehaviour
 
     public GameObject levelWinText;
 
-    private int timer = 600;
+    private float timer;
     private bool loading = false;
 
     // Start is called before the first frame update
@@ -24,8 +24,7 @@ public class HitCheckpoint : MonoBehaviour
     {
         if (loading)
         {
-            timer--;
-            if (timer < 1)
+            if (Time.realtimeSinceStartup - timer > 2f)
             {
                 GameObject[] toDestroy = GameObject.FindGameObjectsWithTag("DeathX");
 
@@ -54,6 +53,7 @@ public class HitCheckpoint : MonoBehaviour
 
             loading = true;
             Time.timeScale = 0;
+            timer = Time.realtimeSinceStartup;
         }
     }
 }
