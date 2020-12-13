@@ -40,7 +40,7 @@ public class CollisionDetection : MonoBehaviour
     {
         Debug.Log(SceneManager.GetActiveScene().path);
 
-        if (PauseMenu != null && OtherMenu != null && Input.GetKeyDown(KeyCode.Escape))
+        if (PauseMenu != null && OtherMenu != null && Input.GetKeyDown(KeyCode.Escape) && Time.timeScale != 0)
         {
             PauseMenu.SetActive(true);
             OtherMenu.SetActive(true);
@@ -158,10 +158,13 @@ public class CollisionDetection : MonoBehaviour
 
     private void Reload()
     {
-        Vector3 pos = transform.position;
-        GameObject d = Instantiate(DeathX);
-        d.transform.position = pos;
-        DontDestroyOnLoad(d);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (!GameObject.FindGameObjectWithTag("CheckPoint").GetComponent<HitCheckpoint>().loading)
+        {
+            Vector3 pos = transform.position;
+            GameObject d = Instantiate(DeathX);
+            d.transform.position = pos;
+            DontDestroyOnLoad(d);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

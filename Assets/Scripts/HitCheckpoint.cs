@@ -11,7 +11,7 @@ public class HitCheckpoint : MonoBehaviour
     public GameObject levelWinText;
 
     private float timer;
-    private bool loading = false;
+    public bool loading = false;
 
     // Start is called before the first frame update
     void Start()
